@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2E294E">
+  <title>Área da professora | Teacher Teach Me</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="portal.css">
+  <script type="module" src="portal.js"></script>
+  <script type="module" src="payments.js"></script>
+</head>
+<body data-page="teacher">
+  <header class="portal-header dashboard-nav">
+    <a class="portal-brand" href="index.html">Teacher Teach Me<span>.</span></a>
+    <div class="nav-user">
+      <span class="user-avatar">L</span>
+      <span>Área da professora</span>
+      <button class="logout-button" id="teacherLogout">Sair</button>
+    </div>
+  </header>
+
+  <main class="portal-main">
+    <section class="welcome-panel teacher-welcome">
+      <div>
+        <span class="eyebrow light-eyebrow">PAINEL DE ADMINISTRAÇÃO</span>
+        <h1>Bem-vinda à sua <em>área de gestão.</em></h1>
+        <p>Organize seus estudantes, publique materiais e acompanhe os conteúdos disponibilizados na plataforma.</p>
+      </div>
+      <div class="welcome-decoration">TTM<span>.</span></div>
+    </section>
+
+    <section class="teacher-stats">
+      <article class="stat-card">
+        <span>ESTUDANTES</span>
+        <strong id="studentCount">0</strong>
+        <small>Contas cadastradas</small>
+      </article>
+      <article class="stat-card">
+        <span>MATERIAIS</span>
+        <strong id="materialCount">0</strong>
+        <small>Conteúdos publicados</small>
+      </article>
+      <article class="stat-card">
+        <span>PLATAFORMA</span>
+        <strong>Ativa</strong>
+        <small>Teacher Teach Me</small>
+      </article>
+    </section>
+
+    <section class="portal-section">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">GERENCIAMENTO</span>
+          <h2>Estudantes cadastrados.</h2>
+          <p>Consulte os alunos e seus respectivos planos.</p>
+        </div>
+      </div>
+
+      <div class="table-container">
+     <table class="portal-table">
+  <thead>
+    <tr>
+      <th>Estudante</th>
+      <th>E-mail</th>
+      <th>Plano</th>
+      <th>Status</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody id="studentsTable">
+    <tr>
+      <td colspan="5">Carregando estudantes...</td>
+    </tr>
+  </tbody>
+</table>
+      </div>
+    </section>
+
+    <!-- REVISÃO DE PAGAMENTOS -->
+    <section class="portal-section">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">CONTROLE FINANCEIRO</span>
+          <h2>Pagamentos recebidos.</h2>
+          <p>Confira os comprovantes e confirme ou rejeite os pagamentos enviados.</p>
+        </div>
+        <button type="button" class="small-action" id="refreshPayments">
+          Atualizar lista
+        </button>
+      </div>
+
+      <div id="teacherPayments" class="payment-admin-list">
+        <div class="loading-state">Carregando pagamentos...</div>
+      </div>
+    </section>
+<section class="portal-section">
+  <div class="section-heading">
+    <div>
+      <span class="section-kicker">ORGANIZAÇÃO DE AULAS</span>
+      <h2>Agenda de aulas.</h2>
+      <p>Conecte sua agenda Google para centralizar os agendamentos da plataforma.</p>
+    </div>
+  </div>
+
+  <div class="calendar-connect-card">
+    <div class="calendar-connect-info">
+      <div class="calendar-icon">
+        <svg viewBox="0 0 48 48" aria-hidden="true">
+          <rect x="5" y="9" width="38" height="34" rx="6" fill="#4285F4"/>
+          <path d="M5 16h38" stroke="#fff" stroke-width="3"/>
+          <path d="M15 5v9M33 5v9" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+          <path d="M15 24h6v6h-6zM27 24h6v6h-6zM15 34h6v5h-6z" fill="#fff"/>
+        </svg>
+      </div>
+
+      <div>
+        <h3>Google Calendar</h3>
+        <p id="calendarConnectionStatus">Sua agenda ainda não foi conectada.</p>
+      </div>
+    </div>
+
+    <button
+      type="button"
+      class="portal-button primary-button"
+      id="connectGoogleCalendar"
+    >
+      Conectar Google Calendar
+    </button>
+
+    <p class="form-feedback" id="calendarFeedback" role="status"></p>
+  </div>
+</section>
+
+    <section class="portal-section teacher-workspace">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">PUBLICAÇÃO DE CONTEÚDOS</span>
+          <h2>Adicionar material.</h2>
+          <p>Escolha o estudante que receberá o conteúdo e anexe o arquivo correspondente.</p>
+        </div>
+      </div>
+
+      <div class="teacher-layout">
+        <article class="form-panel">
+          <form id="materialForm" class="portal-form">
+            <label>
+              Título do material
+              <input type="text" id="materialTitle" placeholder="Ex.: Exercícios de interpretação de texto" maxlength="120" required>
+            </label>
+
+            <label>
+              Disciplina ou assunto
+              <input type="text" id="materialSubject" placeholder="Ex.: Língua Portuguesa" maxlength="80">
+            </label>
+
+            <label>
+              Descrição
+              <textarea id="materialDescription" rows="4" maxlength="1000" placeholder="Descreva o conteúdo e as orientações para o estudante."></textarea>
+            </label>
+
+            <label>
+              Selecionar estudante
+              <select id="materialTarget" required>
+                <option value="">Carregando estudantes...</option>
+              </select>
+            </label>
+
+            <label>
+              Arquivo
+              <input type="file" id="materialFile" accept=".pdf,.doc,.docx,.ppt,.pptx,.jpg,.jpeg,.png,.txt">
+              <small class="input-help">PDF, Word, PowerPoint, imagens ou texto. Limite de 10 MB.</small>
+            </label>
+
+            <button class="portal-button primary-button full-button" type="submit" id="publishMaterial">
+              Publicar material
+            </button>
+
+            <p class="form-feedback" id="materialFeedback" role="status"></p>
+          </form>
+        </article>
+
+        <aside class="publishing-note">
+          <span class="note-number">01</span>
+          <h3>Publicação organizada.</h3>
+          <p>Selecione um estudante para disponibilizar o conteúdo somente na conta dele.</p>
+          <div class="note-divider"></div>
+          <span class="note-number">02</span>
+          <h3>Materiais gerais.</h3>
+          <p>Selecione a opção de todos os estudantes quando o conteúdo puder ser compartilhado com toda a turma.</p>
+          <div class="note-divider"></div>
+          <span class="note-number">03</span>
+          <h3>Arquivos protegidos.</h3>
+          <p>Os arquivos ficam em um armazenamento privado e são acessados por links temporários autorizados.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="portal-section">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">BIBLIOTECA DA PLATAFORMA</span>
+          <h2>Materiais publicados.</h2>
+          <p>Edite as informações ou remova conteúdos que não precisam mais ficar disponíveis.</p>
+        </div>
+      </div>
+
+      <div class="materials-container" id="teacherMaterials">
+        <div class="loading-state">Carregando materiais...</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="portal-footer">
+    <span>© <span id="currentYear"></span> Teacher Teach Me</span>
+    <a href="index.html">Página inicial</a>
+  </footer>
+</body>
+</html>

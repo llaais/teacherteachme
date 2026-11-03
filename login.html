@@ -1,0 +1,283 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2E294E">
+  <meta name="description" content="Acesse sua área de aprendizagem no Teacher Teach Me.">
+  <title>Acesso | Teacher Teach Me</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="portal.css">
+
+  <script type="module" src="portal.js"></script>
+</head>
+
+<body data-page="login">
+
+  <!-- Cabeçalho -->
+  <header class="portal-header">
+    <a class="portal-brand" href="index.html" aria-label="Teacher Teach Me - Início">
+      Teacher Teach Me<span>.</span>
+    </a>
+
+    <a class="back-link" href="index.html">
+      <span aria-hidden="true">←</span>
+      Voltar ao início
+    </a>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main class="auth-page">
+
+    <!-- Apresentação -->
+    <section class="auth-intro">
+
+      <span class="eyebrow">SEU ESPAÇO DE APRENDIZAGEM</span>
+
+      <h1>
+        Aprender fica melhor quando você tem
+        <em>seu próprio espaço.</em>
+      </h1>
+
+      <p>
+        Acesse seus materiais, acompanhe seus conteúdos e
+        mantenha tudo organizado em um só lugar.
+      </p>
+
+      <div class="auth-benefits">
+
+        <div>
+          <span>01</span>
+          <p>Materiais organizados para cada estudante.</p>
+        </div>
+
+        <div>
+          <span>02</span>
+          <p>Conteúdos disponibilizados pela professora.</p>
+        </div>
+
+        <div>
+          <span>03</span>
+          <p>Acesso simples, de qualquer dispositivo.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Cartão de autenticação -->
+    <section class="auth-card" aria-labelledby="authHeading">
+
+      <div class="section-kicker">TEACHER TEACH ME</div>
+
+      <h2 id="authHeading">Bem-vindo(a) de volta.</h2>
+
+      <p class="auth-subtitle" id="authSubtitle">
+        Entre na sua conta para continuar.
+      </p>
+
+      <!-- Alternância entre login e cadastro -->
+      <div class="auth-tabs" role="tablist" aria-label="Tipo de acesso">
+
+        <button
+          type="button"
+          class="auth-tab active"
+          data-tab="login"
+          role="tab"
+          aria-selected="true"
+        >
+          Entrar
+        </button>
+
+        <button
+          type="button"
+          class="auth-tab"
+          data-tab="register"
+          role="tab"
+          aria-selected="false"
+        >
+          Criar conta
+        </button>
+
+      </div>
+
+      <!-- Formulário de login -->
+      <form id="loginForm" class="portal-form">
+
+        <label for="loginEmail">
+          E-mail
+
+          <input
+            type="email"
+            id="loginEmail"
+            name="email"
+            autocomplete="email"
+            placeholder="seuemail@exemplo.com"
+            required
+          >
+        </label>
+
+        <label for="loginPassword">
+          Senha
+
+          <input
+            type="password"
+            id="loginPassword"
+            name="password"
+            autocomplete="current-password"
+            placeholder="Sua senha"
+            required
+          >
+        </label>
+
+        <button
+          class="portal-button primary-button full-button"
+          type="submit"
+        >
+          Entrar na minha conta
+        </button>
+
+      </form>
+
+      <!-- Formulário de cadastro -->
+      <form id="registerForm" class="portal-form" hidden>
+
+        <label for="registerName">
+          Nome completo
+
+          <input
+            type="text"
+            id="registerName"
+            name="name"
+            autocomplete="name"
+            placeholder="Seu nome completo"
+            maxlength="100"
+            required
+          >
+        </label>
+
+        <label for="registerEmail">
+          E-mail
+
+          <input
+            type="email"
+            id="registerEmail"
+            name="email"
+            autocomplete="email"
+            placeholder="seuemail@exemplo.com"
+            required
+          >
+        </label>
+
+        <label for="registerPassword">
+          Senha
+
+          <input
+            type="password"
+            id="registerPassword"
+            name="password"
+            autocomplete="new-password"
+            placeholder="Mínimo de 6 caracteres"
+            minlength="6"
+            required
+          >
+        </label>
+
+        <label for="registerPlan">
+          Plano mensal
+
+          <select id="registerPlan" name="plan" required>
+            <option value="">Selecione seu plano</option>
+            <option value="1">1 aula por semana · R$ 80,00</option>
+            <option value="2">2 aulas por semana · R$ 150,00</option>
+            <option value="3">3 aulas por semana · R$ 225,00</option>
+            <option value="4">4 aulas por semana · R$ 300,00</option>
+          </select>
+        </label>
+
+        <button
+          class="portal-button primary-button full-button"
+          type="submit"
+        >
+          Criar minha conta
+        </button>
+
+      </form>
+
+      <!-- Separador -->
+      <div class="auth-divider">
+        <span>ou continue com</span>
+      </div>
+
+      <!-- Google -->
+      <div class="social-buttons">
+
+        <button
+          type="button"
+          id="googleLogin"
+          class="google-login"
+        >
+          <svg
+            width="19"
+            height="19"
+            viewBox="0 0 48 48"
+            aria-hidden="true"
+          >
+            <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+            <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.72 7.18l7.23 5.61c4.22-3.89 7.53-9.62 7.53-17.26z"/>
+            <path fill="#FBBC05" d="M10.53 28.59A14.4 14.4 0 0 1 9.75 24c0-1.59.27-3.12.75-4.59l-7.98-6.19A23.9 23.9 0 0 0 0 24c0 3.87.93 7.52 2.56 10.78l7.97-6.19z"/>
+            <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.9-5.79l-7.23-5.61c-2.01 1.35-4.59 2.15-8.67 2.15-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+          </svg>
+
+          Entrar com Google
+        </button>
+
+      </div>
+
+      <!-- Mensagens de retorno -->
+      <p
+        class="form-feedback"
+        id="authFeedback"
+        role="status"
+        aria-live="polite"
+      ></p>
+
+      <p class="auth-legal">
+        Ao criar sua conta, seus dados serão utilizados para
+        identificar seu perfil e disponibilizar os materiais
+        correspondentes.
+      </p>
+
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="portal-footer">
+
+    <span>
+      © <span id="currentYear"></span> Teacher Teach Me
+    </span>
+
+    <span>Professora Laís</span>
+
+  </footer>
+
+  <script>
+    const currentYear = document.getElementById("currentYear");
+
+    if (currentYear) {
+      currentYear.textContent = new Date().getFullYear();
+    }
+  </script>
+
+</body>
+</html>

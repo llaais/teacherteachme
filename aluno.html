@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2E294E">
+  <title>Área do estudante | Teacher Teach Me</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="portal.css">
+  <script type="module" src="portal.js"></script>
+  <script type="module" src="payments.js"></script>
+</head>
+<body data-page="student">
+  <header class="portal-header dashboard-nav">
+    <a class="portal-brand" href="index.html">Teacher Teach Me<span>.</span></a>
+    <div class="nav-user">
+      <span class="user-avatar" id="studentInitials">A</span>
+      <span id="studentNavName">Estudante</span>
+      <button class="logout-button" id="studentLogout">Sair</button>
+    </div>
+  </header>
+
+  <main class="portal-main">
+    <section class="welcome-panel">
+      <div>
+        <span class="eyebrow light-eyebrow">ÁREA DO ESTUDANTE</span>
+        <h1>Olá, <em id="studentName">estudante</em>.</h1>
+        <p>Este é o seu espaço. Aqui você encontra os materiais e conteúdos preparados para acompanhar suas aulas.</p>
+      </div>
+      <div class="welcome-decoration">TTM<span>.</span></div>
+    </section>
+
+    <section class="student-overview">
+      <article class="overview-card">
+        <div class="card-icon">01</div>
+        <span class="card-label">MEU PLANO</span>
+        <h2 id="studentPlanTitle">Carregando...</h2>
+        <p id="studentPlanDescription">Consultando suas informações.</p>
+      </article>
+
+      <article class="overview-card">
+        <div class="card-icon">02</div>
+        <span class="card-label">MINHA CONTA</span>
+        <h2>Área pessoal</h2>
+        <p>Seus materiais ficam disponíveis nesta página.</p>
+      </article>
+
+      <article class="overview-card">
+        <div class="card-icon">03</div>
+        <span class="card-label">SUPORTE</span>
+        <h2>Fale com a professora</h2>
+        <p>Entre em contato para combinar horários e esclarecer dúvidas.</p>
+        <a class="card-link" href="https://wa.me/5511992605395" target="_blank" rel="noopener">Conversar pelo WhatsApp ↗</a>
+      </article>
+    </section>
+
+    <section class="portal-section student-booking-section" id="studentBooking">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">AGENDAMENTO DE AULAS</span>
+          <h2>Escolha seu horário.</h2>
+          <p>Consulte os horários disponíveis e agende sua próxima aula diretamente pelo calendário.</p>
+        </div>
+      </div>
+
+      <div class="student-booking-card">
+        <iframe
+          src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3cYM7NxzflzA8NqLJiwF2gBNz_BjXHqxqqAIz6oYpv9nAOX0HoyFhPmEdVPZ22-ffxVAySeXkU?gv=true"
+          title="Calendário para agendamento de aulas"
+          width="100%"
+          height="750"
+          frameborder="0"
+          loading="lazy"
+          style="border: 0;">
+        </iframe>
+      </div>
+    </section>
+
+    <section class="portal-section">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">CONTEÚDO PERSONALIZADO</span>
+          <h2>Meus materiais.</h2>
+          <p>Os arquivos disponibilizados pela professora aparecerão aqui.</p>
+        </div>
+      </div>
+
+      <div class="materials-container" id="studentMaterials">
+        <div class="loading-state">Carregando seus materiais...</div>
+      </div>
+    </section>
+
+    <section class="portal-section plan-selection" id="planSelection" hidden>
+      <div class="plan-selection-card">
+        <span class="section-kicker">CONFIGURE SUA CONTA</span>
+        <h2>Escolha seu plano.</h2>
+        <p>Seu cadastro ainda não possui um plano selecionado.</p>
+
+        <form id="studentPlanForm" class="portal-form">
+          <label>
+            Plano mensal
+            <select id="studentPlanSelect" required>
+              <option value="">Selecione</option>
+              <option value="1">1 aula por semana · R$ 80,00</option>
+              <option value="2">2 aulas por semana · R$ 150,00</option>
+              <option value="3">3 aulas por semana · R$ 225,00</option>
+              <option value="4">4 aulas por semana · R$ 300,00</option>
+            </select>
+          </label>
+          <button class="portal-button primary-button" type="submit">Salvar meu plano</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="portal-section" id="studentPaymentSection">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">PAGAMENTO MENSAL</span>
+          <h2>Realize seu pagamento.</h2>
+          <p>Faça o PIX e envie o comprovante para análise da professora.</p>
+        </div>
+      </div>
+
+      <div class="payment-layout">
+        <article class="payment-card">
+          <span class="section-kicker">PAGAMENTO VIA PIX</span>
+          <h3>Dados para transferência</h3>
+
+          <div class="pix-key-box">
+            <span>CHAVE PIX</span>
+            <strong id="pixKey">11992605395</strong>
+            <button type="button" class="portal-button primary-button full-button" id="copyPixKey">
+              Copiar chave PIX
+            </button>
+            <p id="pixFeedback" class="form-feedback" role="status"></p>
+          </div>
+
+          <div class="payment-plan-info">
+            <span>SEU PLANO</span>
+            <strong id="paymentPlanName">Consultando plano...</strong>
+            <span>VALOR MENSAL</span>
+            <strong id="paymentPlanAmount">--</strong>
+          </div>
+
+          <p class="payment-instructions">
+            Após realizar a transferência, envie o comprovante abaixo.
+            O pagamento ficará pendente até a conferência da professora.
+          </p>
+
+          <form id="paymentForm" class="portal-form">
+            <label>
+              Comprovante de pagamento
+              <input
+                type="file"
+                id="paymentProof"
+                accept=".pdf,.png,.jpg,.jpeg,application/pdf,image/png,image/jpeg"
+                required
+              >
+              <small class="input-help">PDF, PNG ou JPG. Tamanho máximo de 5 MB.</small>
+            </label>
+
+            <button type="submit" class="portal-button primary-button full-button" id="submitPayment">
+              Enviar comprovante
+            </button>
+
+            <p id="paymentFeedback" class="form-feedback" role="status"></p>
+          </form>
+        </article>
+
+        <aside class="payment-card payment-history-card">
+          <span class="section-kicker">ACOMPANHAMENTO</span>
+          <h3>Meus pagamentos.</h3>
+          <p>Consulte a situação dos comprovantes enviados.</p>
+
+          <div id="studentPayments" class="payment-history-list">
+            <div class="loading-state">Carregando pagamentos...</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="payment-panel">
+      <div>
+        <span class="section-kicker light-eyebrow">INFORMAÇÕES</span>
+        <h2>Organize suas aulas.</h2>
+        <p>Escolha um horário disponível no calendário de agendamento ou entre em contato com a professora caso precise de ajuda.</p>
+      </div>
+      <div class="payment-actions">
+        <a class="portal-button yellow-button" href="https://wa.me/5511992605395" target="_blank" rel="noopener">Entrar em contato</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="portal-footer">
+    <span>© <span id="currentYear"></span> Teacher Teach Me</span>
+    <a href="index.html">Página inicial</a>
+  </footer>
+</body>
+</html>

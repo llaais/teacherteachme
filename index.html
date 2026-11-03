@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2E294E">
+  <meta name="description" content="Aulas particulares com a professora Laís. Planos mensais, materiais e acompanhamento do estudante.">
+  <title>Teacher Teach Me | Professora Laís</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <a class="brand" href="#inicio" aria-label="Teacher Teach Me - início">Teacher Teach Me<span>.</span></a>
+    <a class="header-cta" href="#planos">Ver planos</a>
+  </header>
+
+  <div class="menu-backdrop" id="menuBackdrop"></div>
+  <aside class="side-menu" id="sideMenu" aria-hidden="true">
+    <div class="side-menu-top">
+      <span class="side-brand">Teacher Teach Me<span>.</span></span>
+      <button class="close-menu" id="closeMenu" aria-label="Fechar menu">×</button>
+    </div>
+    <nav class="side-nav">
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre a professora</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#planos">Planos e valores</a>
+      <button class="nav-action" data-open-auth="student">Área do estudante</button>
+      <button class="nav-action" data-open-auth="teacher">Área da professora</button>
+    </nav>
+    <p class="menu-note">Acesse sua área para consultar materiais e informações das aulas.</p>
+  </aside>
+
+  <main>
+    <section class="hero section-shell" id="inicio">
+      <div class="hero-copy">
+        <h1>Um espaço para aprender com <em>confiança.</em></h1>
+        <p class="hero-description">Aulas particulares com explicações claras, acompanhamento próximo e materiais preparados de acordo com as necessidades de cada estudante.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#planos">Conheça os planos</a>
+          <a class="text-link" href="#sobre">Conheça a professora <span>↗</span></a>
+        </div>
+        <div class="hero-details">
+          <div><strong>50 min</strong><span>por aula</span></div>
+          <i></i>
+          <div><strong>R$ 20</strong><span>valor avulso por aula</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="photo-frame">
+          <img src="lais.jpg" alt="Laís, professora particular">
+        </div>
+        <div class="photo-caption"><span class="caption-dot"></span> Professora Laís</div>
+        <div class="mosaic mosaic-hero" aria-hidden="true">
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+    </section>
+
+    <div class="mosaic-strip" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <section class="about section-shell" id="sobre">
+      <div class="section-kicker">UM POUCO SOBRE MIM</div>
+      <div class="about-grid">
+        <div>
+          <h2>Oi, eu sou a <em>Laís.</em></h2>
+          <p class="about-lead">Acredito que aprender fica muito mais fácil quando a explicação faz sentido para quem está aprendendo.</p>
+        </div>
+        <div class="about-text">
+          <p>Dou aulas particulares há mais de dois anos, principalmente para crianças dos anos iniciais do Ensino Fundamental, mas também trabalho com estudantes mais velhos e adultos.</p>
+          <p>Gosto especialmente de Língua Portuguesa, redação, gramática, interpretação de texto e linguística. Nas aulas, procuro entender as dificuldades de cada aluno e explicar o conteúdo de um jeito claro, sem ficar presa a uma única forma de ensinar.</p>
+          <p>Mais do que decorar respostas, a ideia é construir entendimento e dar segurança para que o estudante consiga resolver as atividades por conta própria.</p>
+        </div>
+      </div>
+      <div class="about-points">
+        <div><span>01</span><strong>Explicação clara</strong><p>Conteúdo apresentado passo a passo.</p></div>
+        <div><span>02</span><strong>Acompanhamento</strong><p>Materiais e orientações conforme as necessidades do aluno.</p></div>
+        <div><span>03</span><strong>Respeito ao ritmo</strong><p>Espaço para perguntar, praticar e aprender com calma.</p></div>
+      </div>
+    </section>
+
+    <section class="how-section" id="como-funciona">
+      <div class="section-shell how-inner">
+        <div>
+          <div class="section-kicker light">SIMPLES E ORGANIZADO</div>
+          <h2>Como funcionam<br>as aulas?</h2>
+          <p>Você escolhe a frequência que combina com sua rotina. Depois, pode acessar sua área de estudante para acompanhar os materiais disponibilizados pela professora.</p>
+        </div>
+        <div class="steps">
+          <article><span>1</span><div><h3>Escolha seu plano</h3><p>Selecione uma, duas, três ou quatro aulas por semana.</p></div></article>
+          <article><span>2</span><div><h3>Faça seu cadastro</h3><p>Crie seu acesso com nome, e-mail e senha.</p></div></article>
+          <article><span>3</span><div><h3>Combine os detalhes</h3><p>Entre em contato para alinhar horários e informações das aulas.</p></div></article>
+          <article><span>4</span><div><h3>Acompanhe seus materiais</h3><p>Consulte os conteúdos publicados na sua área de estudante.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="plans-section section-shell" id="planos">
+      <div class="section-kicker">PLANOS MENSAIS</div>
+      <div class="plans-heading">
+        <div><h2>Escolha seu <em>plano.</em></h2><p>Todos os planos consideram quatro semanas por mês. Cada aula tem duração de 50 minutos.</p></div>
+        <div class="unit-price"><span>Valor avulso</span><strong>R$ 20,00</strong><small>por aula de 50 minutos</small></div>
+      </div>
+      <div class="plans-grid" id="plansGrid">
+        <article class="plan-card">
+          <div class="plan-number">01</div><h3>Uma aula por semana</h3>
+          <p class="plan-frequency">4 aulas por mês</p><div class="plan-price">R$ 80<span>,00</span></div>
+          <p class="plan-saving">Sem desconto</p><button class="button button-outline choose-plan" data-plan="1">Escolher este plano</button>
+        </article>
+        <article class="plan-card featured">
+          <div class="popular-label">MAIS FLEXIBILIDADE</div><div class="plan-number">02</div><h3>Duas aulas por semana</h3>
+          <p class="plan-frequency">8 aulas por mês</p><div class="plan-price">R$ 150<span>,00</span></div>
+          <p class="plan-saving">Você economiza R$ 10,00</p><button class="button button-primary choose-plan" data-plan="2">Escolher este plano</button>
+        </article>
+        <article class="plan-card">
+          <div class="plan-number">03</div><h3>Três aulas por semana</h3>
+          <p class="plan-frequency">12 aulas por mês</p><div class="plan-price">R$ 225<span>,00</span></div>
+          <p class="plan-saving">Você economiza R$ 15,00</p><button class="button button-outline choose-plan" data-plan="3">Escolher este plano</button>
+        </article>
+        <article class="plan-card">
+          <div class="plan-number">04</div><h3>Quatro aulas por semana</h3>
+          <p class="plan-frequency">16 aulas por mês</p><div class="plan-price">R$ 300<span>,00</span></div>
+          <p class="plan-saving">Você economiza R$ 20,00</p><button class="button button-outline choose-plan" data-plan="4">Escolher este plano</button>
+        </article>
+      </div>
+      <p class="plans-footnote">Os valores são mensais e consideram quatro semanas. Horários e início das aulas são combinados diretamente com a professora.</p>
+    </section>
+
+    <section class="student-callout">
+      <div class="section-shell callout-inner">
+        <div><div class="section-kicker light">ÁREA DO ESTUDANTE</div><h2>Seus materiais em<br>um só lugar.</h2><p>Acesse sua conta para consultar os conteúdos e avisos publicados para você.</p></div>
+        <button class="button button-yellow" data-open-auth="student">Entrar na minha área <span>↗</span></button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-main">
+      <a class="brand footer-brand" href="#inicio">Teacher Teach Me<span>.</span></a>
+      <p>Aulas particulares com atenção ao processo de aprendizagem de cada estudante.</p>
+      <a href="#planos">Planos e valores</a>
+    </div>
+    <div class="footer-bottom"><span>© <span id="year"></span> Teacher Teach Me. Todos os direitos reservados.</span><span>Professora Laís</span></div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/5511992605395" target="_blank" rel="noopener" aria-label="Conversar com a professora pelo WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 .8A15 15 0 0 0 3.1 23.4L1 31l7.8-2A15.1 15.1 0 1 0 16 .8Zm0 27.5a12.4 12.4 0 0 1-6.3-1.7l-.5-.3-4.6 1.2 1.2-4.5-.3-.5A12.4 12.4 0 1 1 16 28.3Zm6.8-9.3c-.4-.2-2.1-1-2.5-1.1-.3-.1-.6-.2-.8.2s-.9 1.1-1.1 1.3c-.2.2-.4.3-.8.1a10.2 10.2 0 0 1-3-1.8 11.2 11.2 0 0 1-2.1-2.6c-.2-.4 0-.6.2-.8l.6-.7c.2-.2.2-.4.3-.6.1-.2 0-.5 0-.7s-.8-1.9-1.1-2.6c-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.2 3.3 1.4 3.5c.2.2 2.4 3.7 5.8 5.2.8.3 1.4.5 1.9.7.8.2 1.5.2 2.1.1.6-.1 2.1-.9 2.4-1.7.3-.8.3-1.5.2-1.7-.1-.1-.3-.2-.7-.4Z"/></svg>
+  </a>
+
+  <div class="modal-backdrop" id="modalBackdrop" hidden></div>
+  <section class="auth-modal" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle" hidden>
+    <button class="modal-close" id="closeModal" aria-label="Fechar">×</button>
+    <div class="section-kicker">TEACHER TEACH ME</div>
+    <h2 id="authTitle">Acesse sua área</h2>
+    <div class="auth-tabs"><button class="auth-tab active" data-auth-tab="login">Entrar</button><button class="auth-tab" data-auth-tab="register">Criar conta</button></div>
+    <button type="button" id="googleLogin" class="google-login">
+    Continuar com Google
+</button>
+     <form id="authForm"> </form> <label id="nameField" hidden>Nome completo<input type="text" id="authName" autocomplete="name"></label>
+      <label>E-mail<input type="email" id="authEmail" required autocomplete="email" placeholder="seuemail@exemplo.com"></label>
+      <label>Senha<input type="password" id="authPassword" required minlength="6" autocomplete="current-password" placeholder="Mínimo de 6 caracteres"></label>
+      <label id="planField" hidden>Plano escolhido<select id="authPlan"><option value="">Selecione um plano</option><option value="1">1 aula por semana · R$ 80,00/mês</option><option value="2">2 aulas por semana · R$ 150,00/mês</option><option value="3">3 aulas por semana · R$ 225,00/mês</option><option value="4">4 aulas por semana · R$ 300,00/mês</option></select></label>
+      <label id="roleField" hidden>Tipo de acesso<select id="authRole"><option value="student">Estudante</option><option value="teacher">Professora</option></select></label>
+      <button class="button button-primary auth-submit" type="submit" id="authSubmit">
+  Entrar
+</button>
+
+<p class="form-message" id="authMessage" role="status"></p>
+</form>
+
+  <section class="dashboard" id="dashboard" hidden>
+    <div class="dashboard-header"><div><div class="section-kicker light">TEACHER TEACH ME</div><h2 id="dashboardTitle">Área do estudante</h2><p id="dashboardWelcome"></p></div><button class="button button-outline light-outline" id="logoutButton">Sair</button></div>
+    <div class="dashboard-content" id="dashboardContent"></div>
+  </section>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
